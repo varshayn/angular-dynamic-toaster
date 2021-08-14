@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-dynamic-toaster": {
+      "projectType": "library",
+      "root": "projects/ng-dynamic-toaster",
+      "sourceRoot": "projects/ng-dynamic-toaster/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-dynamic-toaster/tsconfig.lib.json",
+            "project": "projects/ng-dynamic-toaster/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-dynamic-toaster/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-dynamic-toaster/src/test.ts",
+            "tsConfig": "projects/ng-dynamic-toaster/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-dynamic-toaster/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-dynamic-toaster/tsconfig.lib.json",
+              "projects/ng-dynamic-toaster/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-dynamic-toaster"
+}
