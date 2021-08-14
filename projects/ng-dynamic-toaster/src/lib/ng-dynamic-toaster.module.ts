@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NgDynamicToasterComponent } from './ng-dynamic-toaster.component';
 
@@ -8,6 +9,7 @@ import { NgDynamicToasterComponent } from './ng-dynamic-toaster.component';
     NgDynamicToasterComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     NgDynamicToasterComponent
